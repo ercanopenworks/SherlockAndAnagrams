@@ -18,7 +18,15 @@ namespace SherlockAndAnagrams
             {
                 for (var j = i; j < s.Length; j++)
                 {
-                    var sub = new string(s.Substring(i, j - i + 1).ToCharArray().OrderBy(p => p).ToArray());
+                    //var subPart = s.Substring(i, j - i + 1);
+                    //var subPartCharArray = subPart.ToCharArray();
+                    //var subPartOrderedCharArray = subPartCharArray.OrderBy(p => p);
+                    //var subPartToArray = subPartOrderedCharArray.ToArray();
+
+                    //var sub = new string(subPartToArray);
+
+                    var subPart = s.Substring(i, j - i + 1).ToCharArray().OrderBy(o => o).ToArray();
+                    var sub = new string(subPart);
 
                     if (!subFreqs.ContainsKey(sub))
                     {
